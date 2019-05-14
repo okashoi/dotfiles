@@ -1,0 +1,29 @@
+[user]
+	name = Okada Shohei
+	email = okashoicircus0@gmail.com
+[secrets]
+	providers = git secrets --aws-provider
+	patterns = [A-Z0-9]{20}
+	patterns = (\"|')?(AWS|aws|Aws)?_?(SECRET|secret|Secret)?_?(ACCESS|access|Access)?_?(KEY|key|Key)(\"|')?\\s*(:|=>|=)\\s*(\"|')?[A-Za-z0-9/\\+=]{40}(\"|')?
+	patterns = (\"|')?(AWS|aws|Aws)?_?(ACCOUNT|account|Account)_?(ID|id|Id)?(\"|')?\\s*(:|=>|=)\\s*(\"|')?[0-9]{4}\\-?[0-9]{4}\\-?[0-9]{4}(\"|')?
+	allowed = AKIAIOSFODNN7EXAMPLE
+	allowed = wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
+[init]
+	templatedir = ~/.git-templates/git-secrets
+[core]
+	filemode = false
+	excludesfile = ~/.gitignore-global
+[alias]
+    st = status
+    b = branch
+    ba = branch -a
+    co = checkout
+    cob = checkout -b
+    cm = commit
+    cmm = commit -m
+    cma = commit --amend
+    cmam = commit --amend -m
+    diffc = diff --cached
+    graph = log --graph --date=short --decorate=short --pretty=format:'%Cgreen%h %Creset%cd %Cblue%cn %Cred%d %Creset%s'
+    f = fetch
+    fp = fetch --prune
