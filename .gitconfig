@@ -13,6 +13,9 @@
 [core]
 	filemode = false
 	excludesfile = ~/.gitignore-global
+	autocrlf = false
+[color]
+	ui = true
 [alias]
     st = status
     b = branch
