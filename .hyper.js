@@ -9,7 +9,7 @@ module.exports = {
     updateChannel: 'stable',
 
     // default font size in pixels for all tabs
-    fontSize: 18,
+    fontSize: 16,
 
     // font family with optional fallbacks
     fontFamily: 'Ricty, Menlo, "DejaVu Sans Mono", Consolas, "Lucida Console", monospace',
@@ -21,7 +21,7 @@ module.exports = {
     fontWeightBold: 'bold',
 
     // line height as a relative unit
-    lineHeight: 1,
+    lineHeight: 1.2,
 
     // letter spacing as a relative unit
     letterSpacing: 0,
@@ -39,7 +39,7 @@ module.exports = {
     cursorBlink: false,
 
     // color of the text
-    foregroundColor: '#ddd',
+    foregroundColor: '#ccc',
 
     // terminal background color
     // opacity is only supported on macOS
@@ -138,6 +138,24 @@ module.exports = {
     webGLRenderer: true,
 
     // for advanced config flags please refer to https://hyper.is/#cfg
+    hyperStatusLine: {
+      footerTransparent: false,
+    },
+
+    hypercwd: {
+      initialWorkingDirectory: '~/Projects'
+    },
+
+    paneNavigation: {
+      hotkeys: {
+        navigation: {
+          up: 'ctrl+alt+k',
+          down: 'ctrl+alt+j',
+          left: 'ctrl+alt+h',
+          right: 'ctrl+alt+l'
+        },
+      },
+    },
   },
 
   // a list of plugins to fetch and install from npm
@@ -146,7 +164,13 @@ module.exports = {
   //   `hyperpower`
   //   `@company/project`
   //   `project#1.0.1`
-  plugins: [],
+  plugins: [
+    "hyper-statusline",
+    "hyperterm-material",
+    "hyper-search",
+    "hypercwd",
+    "hyper-pane"
+  ],
 
   // in development, you can create a directory under
   // `~/.hyper_plugins/local/` and include it here
