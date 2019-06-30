@@ -55,6 +55,8 @@ alias la="ls -a" ll="ls -l" lla="ls -al"
 alias sort="LC_ALL='C' sort"
 alias uniq="LC_ALL='C' uniq"
 alias g="git"
+alias d="docker"
+alias dc="docker-compose"
 
 export EDITOR=vim
 export LANG=ja_JP.UTF-8
