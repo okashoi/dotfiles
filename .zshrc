@@ -93,13 +93,11 @@ case ${UID} in
     PROMPT="
 %0(?|$prompt_ok_su|%18(?|$prompt_ok_su|$prompt_ng_su))"
     PROMPT2="%B%K{7}%_%k >%b"
-    RPROMPT="%B%K{7}[%39<...<%~]%k%b"
     ;;
 *)
     PROMPT="
 %0(?|$prompt_ok|%18(?|$prompt_ok|$prompt_ng))"
     PROMPT2="%B%K{6}%_%k >%b "
-    RPROMPT="%K{3}%B[%39<...<%~]%b%k"
     ;;
 esac
 
