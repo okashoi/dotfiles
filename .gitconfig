@@ -34,3 +34,5 @@
 	path = ~/Projects/src/bitbucket.org/willgateteamvietnum/.gitconfig
 [ghq]
 	root = ~/Projects/src
+[pull]
+	rebase = false
