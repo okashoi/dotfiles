@@ -10,6 +10,7 @@
 	allowed = wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
 [init]
 	templatedir = ~/.git-templates/git-secrets
+	defaultBranch = main
 [core]
 	filemode = false
 	excludesfile = ~/.gitignore-global
