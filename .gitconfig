@@ -33,6 +33,8 @@
 	fp = fetch --prune
 [includeIf "gitdir:~/Projects/src/bitbucket.org/willgateteamvietnum/"]
 	path = ~/Projects/src/bitbucket.org/willgateteamvietnum/.gitconfig
+[includeIf "gitdir:~/Projects/src/github.com/willgate-dev/"]
+	path = ~/Projects/src/github.com/willgate-dev/.gitconfig
 [ghq]
 	root = ~/Projects/src
 [pull]
