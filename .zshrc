@@ -85,8 +85,10 @@ setopt list_packed
 
 local prompt_ok_su="%B%S[%n@%m]%s %#%b "
 local prompt_ng_su="%B%S[%n@%m]%s %F{1}%#%f%b "
-local prompt_ok="%B%K{4}[%n@%m]%k %#%b "
-local prompt_ng="%B%K{4}[%n@%m]%k %F{1}%#%f%b "
+local prompt_ok="%B[%F{magenta}%n%f@%F{cyan}%M%f:%F{yellow}%~%f]%b
+%# "
+local prompt_ng="%B[%F{magenta}%n%f@%F{cyan}%M%f:%F{yellow}%~%f]%b
+%F{1}%#%f "
 
 case ${UID} in
 0)
