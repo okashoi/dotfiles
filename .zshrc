@@ -1,7 +1,7 @@
 # Set up the prompt
 
 export GOPATH=~/Projects
-export PATH=$GOPATH/bin:/usr/local/bin:$PATH
+export PATH=$GOPATH/bin:/usr/local/go/bin:/usr/local/bin:$PATH
 
 # autoload -Uz promptinit
 # promptinit
