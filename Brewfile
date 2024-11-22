@@ -1,31 +1,26 @@
 tap "homebrew/bundle"
-tap "homebrew/cask"
-tap "homebrew/cask-fonts"
-tap "homebrew/cask-versions"
-tap "homebrew/core"
-tap "argon/mas"
+tap "ynqa/tap"
 
 brew "awscli"
+brew "curl"
 brew "ghq"
+brew "glib"
+brew "gnu-sed" if OS.mac?
 brew "git"
-brew "git-secrets"
 brew "go"
 brew "jq"
-brew "mas"
 brew "node"
-brew "openssl@1.1"
+brew "openssl@3"
 brew "peco"
+brew "python@3.13"
 brew "tmux"
-
-# tap rcmdnk/file
-# brew brew-file
+brew "ynqa/tap/jnv"
 
 cask_args appdir: "/Applications"
-
 cask "1password"
 cask "alfred"
 cask "discord"
-cask "docker"
+cask "font-udev-gothic"
 cask "google-chrome"
 cask "google-japanese-ime"
 cask "hyper"
