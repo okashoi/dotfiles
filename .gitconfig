@@ -13,8 +13,8 @@
 	st = status
 	b = branch
 	ba = branch -a
-	co = checkout
-	cob = checkout -b
+	co = switch
+	cob = switch -c
 	cm = commit
 	cmm = commit -m
 	cma = commit --amend
