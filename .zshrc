@@ -47,6 +47,7 @@ freebsd*|darwin*)
     ;;
 linux*)
     alias ls="ls -F --color"
+    alias pbcopy="xsel --clipboard --input"
     ;;
 esac
 
