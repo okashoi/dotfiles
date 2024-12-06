@@ -1,6 +1,7 @@
 tap "homebrew/bundle"
 tap "ynqa/tap"
 
+brew "1password-cli"
 brew "awscli"
 brew "curl"
 brew "ghq"
