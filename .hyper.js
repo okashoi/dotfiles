@@ -143,7 +143,6 @@ module.exports = {
     },
 
     hypercwd: {
-      initialWorkingDirectory: '~/Projects'
     },
 
     paneNavigation: {
