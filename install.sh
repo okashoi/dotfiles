@@ -7,5 +7,8 @@ ln -s $PWD/.zshrc ~/.zshrc
 ln -s $PWD/.hyper.js ~/.hyper.js
 ln -s $PWD/.irbrc ~/.irbrc
 
+mkdir -p ~/.config/herdr
+ln -s $PWD/.config/herdr/config.toml ~/.config/herdr/config.toml
+
 ln -s $PWD/.Brewfile ~/.Brewfile
 brew bundle --global --force
