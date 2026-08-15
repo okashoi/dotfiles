@@ -1,0 +1,16 @@
+{
+  "model": "opus[1m]",
+  "extraKnownMarketplaces": {
+    "phpstorm-marketplace": {
+      "source": {
+        "source": "github",
+        "repo": "jetbrains/phpstorm-claude-marketplace"
+      }
+    }
+  },
+  "effortLevel": "xhigh",
+  "preferredNotifChannel": "terminal_bell",
+  "enabledPlugins": {
+    "phpstorm-plugin@phpstorm-marketplace": true
+  }
+}

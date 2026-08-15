@@ -7,6 +7,10 @@ ln -s $PWD/.zshrc ~/.zshrc
 ln -s $PWD/.hyper.js ~/.hyper.js
 ln -s $PWD/.irbrc ~/.irbrc
 
+mkdir -p ~/.claude
+ln -s $PWD/.claude/CLAUDE.md ~/.claude/CLAUDE.md
+ln -s $PWD/.claude/setting.json ~/.claude/setting.json
+
 mkdir -p ~/.config/herdr
 ln -s $PWD/.config/herdr/config.toml ~/.config/herdr/config.toml
 
