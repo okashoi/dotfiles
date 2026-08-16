@@ -1,18 +1,20 @@
 #!/bin/sh
 
-ln -s $PWD/.gitconfig ~/.gitconfig
-ln -s $PWD/.gitignore-global ~/.gitignore-global
-ln -s $PWD/.tmux.conf ~/.tmux.conf
-ln -s $PWD/.zshrc ~/.zshrc
-ln -s $PWD/.hyper.js ~/.hyper.js
-ln -s $PWD/.irbrc ~/.irbrc
+ln -sf $PWD/.gitconfig ~/.gitconfig
+ln -sf $PWD/.gitignore-global ~/.gitignore-global
+ln -sf $PWD/.tmux.conf ~/.tmux.conf
+ln -sf $PWD/.zshrc ~/.zshrc
+ln -sf $PWD/.hyper.js ~/.hyper.js
+ln -sf $PWD/.irbrc ~/.irbrc
 
 mkdir -p ~/.claude
-ln -s $PWD/.claude/CLAUDE.md ~/.claude/CLAUDE.md
-ln -s $PWD/.claude/setting.json ~/.claude/setting.json
+ln -sf $PWD/.claude/CLAUDE.md ~/.claude/CLAUDE.md
+ln -sf $PWD/.claude/setting.json ~/.claude/setting.json
 
 mkdir -p ~/.config/herdr
-ln -s $PWD/.config/herdr/config.toml ~/.config/herdr/config.toml
+ln -sf $PWD/.config/herdr/config.toml ~/.config/herdr/config.toml
 
-ln -s $PWD/.Brewfile ~/.Brewfile
-brew bundle --global --force
+if [ "$(uname -s)" = "Darwin" ]; then
+  ln -sf $PWD/.Brewfile ~/.Brewfile
+  brew bundle --global --force
+fi
