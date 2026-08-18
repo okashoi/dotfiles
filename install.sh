@@ -9,7 +9,7 @@ ln -sf $PWD/.irbrc ~/.irbrc
 
 mkdir -p ~/.claude
 ln -sf $PWD/.claude/CLAUDE.md ~/.claude/CLAUDE.md
-ln -sf $PWD/.claude/setting.json ~/.claude/setting.json
+ln -sf $PWD/.claude/settings.json ~/.claude/settings.json
 
 mkdir -p ~/.config/herdr
 ln -sf $PWD/.config/herdr/config.toml ~/.config/herdr/config.toml
