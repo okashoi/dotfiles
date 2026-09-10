@@ -3,16 +3,25 @@
 ## ツール
 
 - ファイルの読み書きは Read / Edit / Write tool で行う。シェルの cat・sed・スクリプトによる一括置換で代替しない（壊れやすく、何をしたかが差分に残らない）。
-- 改名・呼び出し階層の調査・構造検索は PhpStorm MCP を使う（`rename_refactoring` / `analyze_calls` / `search_symbol` / `get_symbol_info` / `search_structural` / `get_file_problems`）。スキーマは ToolSearch で `select:mcp__phpstorm__<名前>` として読み込む。PHP・TypeScript の両方で動く。
-  - `rename_refactoring` はファイル名を追随しないので、クラス名の変更後は `git mv` してオートロードを確認する。実行後のファイルは Edit の前に読み直す。
-  - 単純な文字列・ファイル名の検索は Grep / Glob でよい。整形は各リポジトリの整形コマンドが正。
-  - セッションの中で使い方を指示されたり新たに発見した場合は、このファイルに反映して次回以降使えるようにする。
+- 改名・呼び出し階層の調査・構造検索は PhpStorm MCP を使う（`rename_refactoring` / `analyze_calls` / `search_symbol` / `get_symbol_info` / `search_structural` / `search_text` / `get_file_problems`）。スキーマは ToolSearch で `select:mcp__phpstorm__<名前>` として読み込む。PHP・TypeScript の両方で動く。
+- 検索は問いの種類で使い分ける。MCP の検索は一致内容ではなく座標を返すため Read が follow-up で必要になり、リテラル検索では Grep より token と時間を食う。一方 Grep では記号の解決に届かない。
+  - リテラル・ファイル名・「この文字列がどこかにあるか」は Grep / Glob。シェルで書くなら `grep` より `rg`。
+  - 既存の命名や実装の慣例、型、呼び出し元は MCP。慣例を探すときは `search_symbol` に語の断片を渡す（`Input` で `...InputParam` の慣例に行き当たる）。`search_structural` は当て推量のパターンだと空振りするので、`get_structural_patterns` で確かめてから使う。
+  - `analyze_calls` の `symbolFqn` は呼び出せるもの（メソッド・関数）に限る。クラスの FQN を渡すとエラーになるので、クラスの使用箇所は `search_text` で探す。
+- 改名は `rename_refactoring` を使う。手で置換すると参照を取りこぼす。ただし追随しないものがあるので、実行後に次を確認する。
+  - ファイル名。クラス名の変更後は `git mv` してオートロードを確認する。実行後のファイルは Edit の前に読み直す。
+  - DI 設定などの YAML に書かれた FQN。名前空間が落ちた値に壊れることがあるので、設定ファイルの差分は必ず見る。
+  - 似た名前の private メソッド。`read` を改名しても `readOccurredAt` は残る。
+- 編集直後に流れてくる IDE の diagnostics は、再インデックス前だと当てにならない（ファイル末尾を越えた行番号、削除済みクラスへの参照）。整形と静的解析は各リポジトリのコマンドの結果を正とする。
+- セッションの中で使い方を指示されたり新たに発見した場合は、このファイルに反映して次回以降使えるようにする。
 
 ## コミット
 
 - 「〜を切り出す」「〜を追加する」のように、独立して読める単位に分ける。1つのタスクの成果物をまとめて1コミットにしない。
 - 原則、コミット毎にビルドや静的解析、テストがパスするような単位で分ける。
 - 自動生成物は、生成元を変更したコミットに含める。
+- レビュー指摘の反映も指摘ごとに分ける。「レビュー指摘を反映する」の1コミットにまとめない。
+- 何をどう分けるかは手を入れる前に決める。分ける順序は、後のコミットで捨てる変更を前のコミットで作らないように選ぶ。
 
 ## 文章（コードコメント・コミットメッセージ・ドキュメント）
 
