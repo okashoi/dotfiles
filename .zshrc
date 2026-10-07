@@ -167,6 +167,20 @@ function peco-history() {
 }
 zle -N peco-history
 
+# peco で選んだ git のブランチ名をカーソル位置に挿入する
+function peco-git-branch() {
+  local branch=$(git for-each-ref --format='%(refname)' refs/heads refs/remotes 2>/dev/null \
+    | grep -v '/HEAD$' \
+    | sed -e 's#^refs/heads/##' -e 's#^refs/remotes/##' \
+    | peco --prompt 'BRANCH>')
+  if [ -n "$branch" ]; then
+    LBUFFER+="$branch"
+  fi
+  zle -R -c
+}
+zle -N peco-git-branch
+
 bindkey '^X^E' edit-command-line
 bindkey '^]' peco-src
 bindkey '^R' peco-history
+bindkey '^G^B' peco-git-branch
