@@ -1,6 +1,4 @@
-tap "go-task/tap"
 tap "homebrew/bundle"
-tap "ynqa/tap"
 
 # Cryptography and SSL/TLS Toolkit
 brew "openssl@3", link: true
@@ -23,9 +21,11 @@ brew "gnu-sed" if OS.mac?
 # Open source programming language to build simple/reliable/efficient software
 brew "go"
 # Task is a task runner/build tool that aims to be simpler and easier to use
-brew "go-task", link: false
+brew "go-task"
 # Agent multiplexer that lives in your terminal
 brew "herdr"
+# Interactive JSON filter using jq
+brew "jnv"
 # Lightweight and flexible command-line JSON processor
 brew "jq"
 # Open-source, cross-platform JavaScript runtime environment
@@ -36,8 +36,6 @@ brew "peco"
 brew "python@3.13"
 # Vi 'workalike' with many additional features
 brew "vim"
-# JSON navigator and interactive filter leveraging jq
-brew "ynqa/tap/jnv", trusted: true
 
 # Password manager that keeps all passwords secure behind one password
 cask "1password", args: { appdir: "/Applications" }
