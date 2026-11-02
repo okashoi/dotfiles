@@ -1,0 +1,18 @@
+font-family = "UDEV Gothic 35 JPDOC"
+font-family = "UDEV Gothic JPDOC"
+font-family = Ricty
+font-family = Menlo
+font-family = monospace
+font-size = 16
+adjust-cell-height = 20%
+
+cursor-style = block
+cursor-style-blink = false
+cursor-color = #dcdcdc
+cursor-opacity = 0.8
+cursor-text = #000000
+
+selection-background = #121313
+selection-foreground = cell-foreground
+
+bell-features = system

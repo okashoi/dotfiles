@@ -17,4 +17,10 @@ ln -sf $PWD/.config/herdr/config.toml ~/.config/herdr/config.toml
 if [ "$(uname -s)" = "Darwin" ]; then
   ln -sf $PWD/.Brewfile ~/.Brewfile
   brew bundle --global --force
+  ghostty_dir="$HOME/Library/Application Support/com.mitchellh.ghostty"
+  if [ -d "$ghostty_dir" ]; then
+    ln -sf $PWD/config.ghostty "$ghostty_dir/config.ghostty"
+  else
+    echo "warning: $ghostty_dir が存在しないため config.ghostty をリンクしません。Ghostty を一度起動してから再実行してください。" >&2
+  fi
 fi

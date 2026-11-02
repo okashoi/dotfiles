@@ -46,10 +46,10 @@ cask "alfred", args: { appdir: "/Applications" }
 # Voice and text chat software
 cask "discord", args: { appdir: "/Applications" }
 cask "font-udev-gothic", args: { appdir: "/Applications" }
+# Terminal emulator that uses platform-native UI and GPU acceleration
+cask "ghostty"
 # Web browser
 cask "google-chrome", args: { appdir: "/Applications" }
-# Terminal built on web technologies
-cask "hyper", args: { appdir: "/Applications" }
 # JetBrains tools manager
 cask "jetbrains-toolbox", args: { appdir: "/Applications" }
 # Noise cancelling application
