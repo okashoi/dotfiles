@@ -14,8 +14,9 @@ cursor-style-blink = false
 cursor-color = #dcdcdc
 cursor-opacity = 0.8
 cursor-text = #000000
+shell-integration-features = no-cursor
 
-selection-background = #121313
+selection-background = #5e6166
 selection-foreground = cell-foreground
 
 bell-features = system
