@@ -6,6 +6,9 @@ font-family = monospace
 font-size = 16
 adjust-cell-height = 20%
 
+window-padding-x = 14
+window-padding-y = 12
+
 cursor-style = block
 cursor-style-blink = false
 cursor-color = #dcdcdc
