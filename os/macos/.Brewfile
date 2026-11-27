@@ -1,7 +1,6 @@
+tap "docker/tap", trusted: true
 tap "homebrew/bundle"
 
-# Cryptography and SSL/TLS Toolkit
-brew "openssl@3", link: true
 # Securely store and access AWS credentials in development environments
 brew "aws-vault"
 # Official Amazon AWS command-line interface
@@ -30,6 +29,8 @@ brew "jnv"
 brew "jq"
 # Open-source, cross-platform JavaScript runtime environment
 brew "node"
+# Cryptography and SSL/TLS Toolkit
+brew "openssl@3"
 # Simplistic interactive filtering tool
 brew "peco"
 # Interpreted, interactive, object-oriented programming language
@@ -54,6 +55,8 @@ cask "google-chrome", args: { appdir: "/Applications" }
 cask "jetbrains-toolbox", args: { appdir: "/Applications" }
 # Noise cancelling application
 cask "krisp", args: { appdir: "/Applications" }
+# Build, run, and govern agents across the software development lifecycle
+cask "docker/tap/sbx", trusted: true
 # Team communication and collaboration software
 cask "slack", args: { appdir: "/Applications" }
 # Open-source code editor
