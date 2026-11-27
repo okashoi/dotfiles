@@ -1,0 +1,30 @@
+# Docker Sandboxes (sbx) のユーザー既定値。~/.sbxenv.yaml に置く。
+# ${{ env.fileDir }} はこのファイルのあるディレクトリ（ホームディレクトリ）に展開される。
+# サンドボックスの HOME は /home/agent。
+
+schemaVersion: 1
+
+additionalWorkspaces:
+  # ~/.claude/CLAUDE.md は sbx が書き込むため、ユーザー単位の rules として置く
+  - path: ${{ env.fileDir }}/.claude/CLAUDE.md
+    target: /home/agent/.claude/rules/host-user.md
+    readOnly: true
+  - path: ${{ env.fileDir }}/.gitconfig
+    target: /home/agent/.config/git/host.gitconfig
+    readOnly: true
+  # .gitconfig の core.excludesfile = ~/.gitignore-global が指す位置
+  - path: ${{ env.fileDir }}/.gitignore-global
+    target: /home/agent/.gitignore-global
+    readOnly: true
+  - path: ${{ env.fileDir }}/Projects/src/github.com/linkage-corp/.gitconfig
+    target: /home/agent/Projects/src/github.com/linkage-corp/.gitconfig
+    readOnly: true
+  - path: ${{ env.fileDir }}/.config/git/sbx.gitconfig
+    target: /home/agent/.config/git/sbx.gitconfig
+    readOnly: true
+
+lifecycle:
+  postCreate:
+    # ~/.gitconfig は sbx が生成する（safe.directory など）ので、置き換えずに include を足す
+    - name: サンドボックス用の git 設定を読み込む
+      command: sbx exec "$SBX_SANDBOX_NAME" git config --global --add include.path '~/.config/git/sbx.gitconfig'

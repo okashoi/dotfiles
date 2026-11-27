@@ -25,12 +25,6 @@
 	f = fetch
 	fp = fetch --prune
 	s = switch
-[includeIf "gitdir:~/Projects/src/bitbucket.org/willgateteamvietnum/"]
-	path = ~/Projects/src/bitbucket.org/willgateteamvietnum/.gitconfig
-[includeIf "gitdir:~/Projects/src/github.com/willgate-dev/"]
-	path = ~/Projects/src/github.com/willgate-dev/.gitconfig
-[includeIf "gitdir:~/Projects/src/github.com/linkage-corp/"]
-	path = ~/Projects/src/github.com/linkage-corp/.gitconfig
 [ghq]
 	root = ~/Projects/src
 [pull]

@@ -1,0 +1,2 @@
+[includeIf "gitdir:~/Projects/src/github.com/linkage-corp/"]
+	path = ~/Projects/src/github.com/linkage-corp/.gitconfig

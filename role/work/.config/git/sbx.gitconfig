@@ -1,0 +1,11 @@
+# Docker Sandboxes (sbx) の中で読み込む git 設定。マウント先は ~/.sbxenv.yaml を参照。
+
+[include]
+	path = ~/.config/git/host.gitconfig
+# ホストの .gitconfig の includeIf "gitdir:~/..." はサンドボックスの HOME では一致しない。
+# ワークスペースはホストと同じ絶対パスにマウントされるので、ホームより下の部分で照合する。
+[includeIf "gitdir:**/github.com/linkage-corp/"]
+	path = ~/Projects/src/github.com/linkage-corp/.gitconfig
+# 署名に使う 1Password の op-ssh-sign と SSH エージェントがサンドボックスにはない
+[commit]
+	gpgsign = false

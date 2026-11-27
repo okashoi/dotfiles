@@ -16,16 +16,6 @@ alias lla="ls -al"
 alias sort="LC_ALL='C' sort"
 alias uniq="LC_ALL='C' uniq"
 
-case "${OSTYPE}" in
-freebsd*|darwin*)
-    alias ls="ls -GF"
-    ;;
-linux*)
-    alias ls="ls -F --color"
-    alias pbcopy="xsel --clipboard --input"
-    ;;
-esac
-
 # Keep 100000 lines of history within the shell and save it to ~/.zsh_history:
 HISTSIZE=100000
 SAVEHIST=100000
